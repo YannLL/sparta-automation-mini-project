@@ -8,8 +8,7 @@ class Amazon_Homepage
   def visit_home_page
     visit(HOMEPAGE_URL)
     sleep 1
-
-
   end
+
 
 end

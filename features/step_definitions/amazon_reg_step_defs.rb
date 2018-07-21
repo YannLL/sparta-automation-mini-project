@@ -2,7 +2,10 @@
 
 Given("I access the amazon UK home page") do
   @amazon = Amazon_Site.new
+  @amazon.get_temp_email.visit_minute_inbox
+  @amazon.get_temp_email.get_email
   @amazon.amazon_homepage.visit_home_page
+  @amazon.get_temp_email.return_email
 end
 
 Given("I wish to register as a new user") do
