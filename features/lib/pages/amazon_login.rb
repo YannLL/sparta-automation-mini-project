@@ -1,13 +1,22 @@
 require 'capybara/dsl'
 
-class Amazon_Homepage
+class Amazon_Login
   include Capybara::DSL
 
-  HOMEPAGE_URL = 'http://www.amazon.co.uk'
+  LOGIN_URL = 'https://www.amazon.co.uk/ap/signin'
 
-  def visit_home_page
-    visit(HOMEPAGE_URL)
-    sleep 1
+  def visit_login_page
+    visit(LOGIN_URL)
   end
-  
+
+
+  def page_check
+    page.has_xpath?('//*[@id="nav-link-yourAccount"]')
+  end
+
+  def incorrect_email
+    sleep 3
+    page.has_content?('We cannot find an account with that e-mail address')
+  end
+
 end

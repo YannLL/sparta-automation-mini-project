@@ -10,11 +10,21 @@ class Amazon_Site
     Amazon_Homepage.new
   end
 
+  def amazon_login
+    Amazon_Login.new  
+  end
+
+  def amazon_search_results
+    Amazon_Search_Resuls.new
+  end
+
   def get_temp_email
     Temp_Email.new
   end
 
-
+  def amazon_product
+    Amazon_Product.new
+  end
 end
 
 # amazon = Amazon_Site.new
